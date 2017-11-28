@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
-        myAdapter!!.filter(newText!!);
+        myAdapter.filter(newText!!);
         return true;
     }
 
@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
 
         val mylist: ArrayList<HashMap<String, String>> = ArrayList()
-        var map: HashMap<String, String>? = null
+        var map: HashMap<String, String>
         for (i in 0 until list.size) {
             val m: Model = list[i]
             if (m.isSelected) {

@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.app.bickup.DeliveryActivity;
 import com.app.bickup.R;
-import com.app.bickup.fragments.BlankFragment;
 
 import java.util.ArrayList;
 
@@ -145,7 +144,7 @@ public class BookingsAdapter extends BaseAdapter {
     }
 
 
-    private void flipCard() {
+  /*  private void flipCard() {
         activity.getFragmentManager().beginTransaction()
                 // Replace the default fragment animations with animator resources representing
                 // rotations when switching to the back of the card, as well as animator
@@ -158,5 +157,5 @@ public class BookingsAdapter extends BaseAdapter {
                 // variable).
                 .add(R.id.booking_container,new BlankFragment())
                .commit();
-    }
+    }*/
 }

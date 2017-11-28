@@ -17,7 +17,7 @@ class MyAdapter(val context: Context, val list: ArrayList<Model>) : RecyclerView
 
     init {
         this.filterList = ArrayList<Model>()
-        this.filterList!!.addAll(this.list)
+        this.filterList.addAll(this.list)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
