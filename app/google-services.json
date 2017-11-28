@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "826937251419",
+    "project_id": "firebase-bickup"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826937251419:android:63ad9401d562c454",
+        "android_client_info": {
+          "package_name": "com.app.bickup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826937251419-r3cit88us9hu9p9r59dd7u5rbbcivvf7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.bickup",
+            "certificate_hash": "b1731ce7367a6fab0743bae71ba30abd0ff75e8f"
+          }
+        },
+        {
+          "client_id": "826937251419-b8276koahaqcqul9ikeoqicp9rv8of8e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-xQ2NJX_QoyLjZQJw8DWnJQwqnJvmTI4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
