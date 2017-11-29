@@ -684,7 +684,7 @@ public class BookingDetailsFragment extends Fragment implements View.OnClickList
                                 // loginActivity.onSuccess(resultObject, requestCode, status);
                                 break;
                             case 201:
-                                Toast.makeText(getApplicationContext(), message[0], Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"Driver not fond,Please try again..", Toast.LENGTH_SHORT).show();
                                 // loginActivity.onSuccess(resultObject, requestCode, status);
                                 break;
                             default:

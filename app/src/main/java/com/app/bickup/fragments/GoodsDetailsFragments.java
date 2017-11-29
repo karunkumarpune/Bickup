@@ -122,7 +122,7 @@ public class GoodsDetailsFragments extends Fragment implements View.OnClickListe
         goodsAndHelper = new GoodsAndHelper();
         lists = new ArrayList<>();
         listImagesGoods = new ArrayList<>();
-        listImagesGoods.add(bitmap1);
+       // listImagesGoods.add(bitmap1);
         GloableVariable.Tag_helper="1";
         GloableVariable.Tag_Good_Details_Comming_time_type="1";
 
@@ -532,7 +532,7 @@ public class GoodsDetailsFragments extends Fragment implements View.OnClickListe
         int id = view.getId();
         switch (id) {
             case R.id.btn_save_booking:
-                if(listImagesGoods.size()==1) {
+                if(listImagesGoods.size()==0) {
                     Toast.makeText(getActivity(), "Please upload Iamge", Toast.LENGTH_SHORT).show();
                 }else {
                     // Toast.makeText(getActivity(), "Good", Toast.LENGTH_SHORT).show();
@@ -824,7 +824,7 @@ public class GoodsDetailsFragments extends Fragment implements View.OnClickListe
         types_good_recyclerView.setLayoutManager(mLayoutManager);
         types_good_recyclerView.setItemAnimator(new DefaultItemAnimator());
         types_good_recyclerView.setAdapter(goodAddAdapter);
-
+        goodAddAdapter.notifyDataSetChanged();
 
     }
 

@@ -179,7 +179,7 @@ public class PickupLocationActivity extends AppCompatActivity implements View.On
             Toast.makeText(this, this.getResources().getString(R.string.txt_vaidate_pickup_location), Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (!CommonMethods.getInstance().validateEditFeild(edtBuildingName.getText().toString())) {
+    /*    if (!CommonMethods.getInstance().validateEditFeild(edtBuildingName.getText().toString())) {
                 if((boolean)liBuilding.getTag()) {
                     Toast.makeText(this, this.getResources().getString(R.string.txt_vaidate_building_name), Toast.LENGTH_SHORT).show();
                 }else {
@@ -187,7 +187,7 @@ public class PickupLocationActivity extends AppCompatActivity implements View.On
                 }
 
                 return false;
-            }
+            }*/
             if((boolean)liOther.getTag()){
                 if (!CommonMethods.getInstance().validateEditFeild(edtContactPersonname.getText().toString())) {
                     Toast.makeText(this, this.getResources().getString(R.string.txt_vaidate_contact_person_name), Toast.LENGTH_SHORT).show();

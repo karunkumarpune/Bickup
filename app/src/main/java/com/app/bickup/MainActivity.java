@@ -87,7 +87,7 @@ import static com.app.bickup.R.id.map;
 import static com.app.bickup.utility.ConstantValues.KEY_CAMERA_POSITION;
 import static com.app.bickup.utility.ConstantValues.KEY_LOCATION;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, InternetConnectionBroadcast.ConnectivityRecieverListener, OnMapReadyCallback, View.OnClickListener,NetworkCallBack {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, InternetConnectionBroadcast.ConnectivityRecieverListener, OnMapReadyCallback, View.OnClickListener, NetworkCallBack {
 
     private Snackbar snackbar;
     private CoordinatorLayout mCoordinatorLayout;
@@ -124,13 +124,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ArrayList<Marker> markerList;
     private CircularProgressView circularProgressBar;
     private String message;
-    private String smallPickupCost="";
-    private String largePickupCost="";
-    private String smallPickupDistance="";
-    private String largePickupDistance="";
+    private String smallPickupCost = "";
+    private String largePickupCost = "";
+    private String smallPickupDistance = "";
+    private String largePickupDistance = "";
 
 
-    private final int REQUEST_FARE_DETAILS=1001;
+    private final int REQUEST_FARE_DETAILS = 1001;
 
 
     @Override
@@ -142,9 +142,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         intializeViews();
         initializeForLocation(savedInstanceState);
         setGoogleMap();
-        GloableVariable.Tag_pickup_home_type="2";
-        GloableVariable.Tag_drop_home_type="2";
-        GloableVariable.Tag_drop_home_type="1";
+        GloableVariable.Tag_pickup_home_type = "2";
+        GloableVariable.Tag_drop_home_type = "2";
+        GloableVariable.Tag_drop_home_type = "1";
 
     }
 
@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void intializeViews() {
         navigationDrawer = (ImageView) findViewById(R.id.navigation_menu);
         navigationDrawer.setOnClickListener(this);
-        circularProgressBar=(CircularProgressView) findViewById(R.id.progress_view);
+        circularProgressBar = (CircularProgressView) findViewById(R.id.progress_view);
         findViewById(R.id.menu_delivery).setOnClickListener(this);
         findViewById(R.id.menu_scheduled).setOnClickListener(this);
         findViewById(R.id.menu_setting).setOnClickListener(this);
@@ -658,15 +658,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String dropAddress = sharedPreferences.getString(ConstantValues.DROP_ADDRESS, "");
 
 
+        GloableVariable.Tag_pickup_contact_name = User.getInstance().getFirstName() + " " + User.getInstance().getLastName();
+        GloableVariable.Tag_pickup_contact_number = User.getInstance().getMobileNumber();
 
 
-        GloableVariable.Tag_pickup_contact_name=User.getInstance().getFirstName()+" "+User.getInstance().getLastName();
-        GloableVariable.Tag_pickup_contact_number=User.getInstance().getMobileNumber();
-
-
-        GloableVariable.Tag_drop_contact_name=User.getInstance().getFirstName()+" "+User.getInstance().getLastName();
-        GloableVariable.Tag_drop_contact_number=User.getInstance().getMobileNumber();
-
+        GloableVariable.Tag_drop_contact_name = User.getInstance().getFirstName() + " " + User.getInstance().getLastName();
+        GloableVariable.Tag_drop_contact_number = User.getInstance().getMobileNumber();
 
 
         boolean isRideActive = sharedPreferences.getBoolean(ConstantValues.IS_RIDE_ACTIVE, false);
@@ -680,18 +677,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 edtPickUpLocation.setText(pickupAddress);
                 edtDropLocation.setText(dropAddress);
 
-                GloableVariable.Tag_pickup_location_address=pickupAddress;
-                GloableVariable.Tag_drop_location_address=dropAddress;
+                GloableVariable.Tag_pickup_location_address = pickupAddress;
+                GloableVariable.Tag_drop_location_address = dropAddress;
 
-                GloableVariable.Tag_pickup_latitude= Double.parseDouble(lattitude);
-                GloableVariable.Tag_pickup_longitude= Double.parseDouble(longitude);
+                GloableVariable.Tag_pickup_latitude = Double.parseDouble(lattitude);
+                GloableVariable.Tag_pickup_longitude = Double.parseDouble(longitude);
 
-                GloableVariable.Tag_drop_latitude= Double.parseDouble(droplattitude);
-                GloableVariable.Tag_drop_longitude= Double.parseDouble(dropLongitude);
+                GloableVariable.Tag_drop_latitude = Double.parseDouble(droplattitude);
+                GloableVariable.Tag_drop_longitude = Double.parseDouble(dropLongitude);
 
 
-
-                prepareGetFareDetails(lattitude,longitude,droplattitude,dropLongitude);
+                prepareGetFareDetails(lattitude, longitude, droplattitude, dropLongitude);
             } catch (Exception e) {
 
             }
@@ -702,7 +698,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 editor.commit();
                 showLocationOnmap();
 
-            }else {
+            } else {
                 getUserCurrentLocation();
             }
         }
@@ -849,15 +845,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btnDisagree.setTypeface(mTypefaceRegular);
         btnAgree.setTypeface(mTypefaceRegular);
         if (choosetraveller == 1) {
-           travellerName.setText(getResources().getString(R.string.txt_small_pickUP));
-            travellerCost.setText("Fare Cost: $"+smallPickupCost);
-            GloableVariable.Tag_total_price=smallPickupCost;
-            GloableVariable.Tag_distance=smallPickupDistance;
-        }else {
+            travellerName.setText(getResources().getString(R.string.txt_small_pickUP));
+            travellerCost.setText("Fare Cost: $" + smallPickupCost);
+            GloableVariable.Tag_total_price = smallPickupCost;
+            GloableVariable.Tag_distance = smallPickupDistance;
+        } else {
             travellerName.setText(getResources().getString(R.string.txt_medium_pickUP));
-            travellerCost.setText("Fare Cost: $"+largePickupCost);
-            GloableVariable.Tag_total_price=smallPickupCost;
-            GloableVariable.Tag_distance=largePickupDistance;
+            travellerCost.setText("Fare Cost: $" + largePickupCost);
+            GloableVariable.Tag_total_price = smallPickupCost;
+            GloableVariable.Tag_distance = largePickupDistance;
 
         }
         btnDisagree.setOnClickListener(new View.OnClickListener() {
@@ -1020,21 +1016,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    public void  prepareGetFareDetails(String lattitude, String longitude, final String droplattitude, final String droplongitude) {
-        String createUserUrl= WebAPIManager.getInstance().getFareDetailsUrl();
-        final JsonObject requestBody=new JsonObject();
+    public void prepareGetFareDetails(String lattitude, String longitude, final String droplattitude, final String droplongitude) {
+        String createUserUrl = WebAPIManager.getInstance().getFareDetailsUrl();
+        final JsonObject requestBody = new JsonObject();
         requestBody.addProperty(ConstantValues.PICKUP_LATTITUDE, lattitude);
         requestBody.addProperty(ConstantValues.PICKUP_LONGITUDE, longitude);
         requestBody.addProperty(ConstantValues.DROP_LATITUDE, droplattitude);
         requestBody.addProperty(ConstantValues.DROP_LONGITUDE, droplongitude);
-        getApproxfareDetails(requestBody,createUserUrl,this,60*1000,REQUEST_FARE_DETAILS);
+        getApproxfareDetails(requestBody, createUserUrl, this, 60 * 1000, REQUEST_FARE_DETAILS);
     }
 
     private void getApproxfareDetails(JsonObject requestBody, String createUserUrl, final NetworkCallBack loginActivity, int timeOut, final int requestCode) {
         circularProgressBar.setVisibility(View.VISIBLE);
         Ion.with(this)
-                .load("POST",createUserUrl)
-                .setHeader(ConstantValues.USER_ACCESS_TOKEN,User.getInstance().getAccesstoken())
+                .load("POST", createUserUrl)
+                .setHeader(ConstantValues.USER_ACCESS_TOKEN, User.getInstance().getAccesstoken())
                 .setJsonObjectBody(requestBody)
                 .asJsonObject()
                 .withResponse()
@@ -1042,20 +1038,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     @Override
                     public void onCompleted(Exception e, Response<JsonObject> result) {
                         circularProgressBar.setVisibility(View.GONE);
-                        if(e!=null){
+                        if (e != null) {
                             Toast.makeText(getApplicationContext(), getResources().getString(R.string.txt_Netork_error), Toast.LENGTH_SHORT).show();
                             return;
                         }
                         int status = result.getHeaders().code();
                         JsonObject resultObject = result.getResult();
-                        String value=String.valueOf(resultObject);
+                        String value = String.valueOf(resultObject);
                         try {
-                            JSONObject jsonObject=new JSONObject(value);
+                            JSONObject jsonObject = new JSONObject(value);
                             message = jsonObject.getString("message");
                         } catch (JSONException e1) {
                             e1.printStackTrace();
                         }
-                        switch (status){
+                        switch (status) {
                             case 422:
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
                                 break;
@@ -1067,7 +1063,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 break;
                             case 200:
                             case 202:
-                                loginActivity.onSuccess(resultObject,requestCode,status);
+                                loginActivity.onSuccess(resultObject, requestCode, status);
                                 break;
                             default:
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
@@ -1076,7 +1072,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
                 });
     }
-
 
 
     @Override
@@ -1094,31 +1089,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    class ParseFareDetailsResult extends AsyncTask<String,Void,HashMap<String,String>> {
+    class ParseFareDetailsResult extends AsyncTask<String, Void, HashMap<String, String>> {
 
         @Override
         protected HashMap<String, String> doInBackground(String... strings) {
-            String email,accessToken,phoneNumber,userId,message,flag="0";
-            HashMap<String,String> map=new HashMap<>();
-            String response=strings[0];
+            String email, accessToken, phoneNumber, userId, message, flag = "0";
+            HashMap<String, String> map = new HashMap<>();
+            String response = strings[0];
             try {
-                JSONObject jsonObject=new JSONObject(response);
-                JSONArray data=jsonObject.getJSONArray("response");
-                message= jsonObject.getString("message");
-                flag= jsonObject.getString("flag");
-                map.put("flag",flag);
-                map.put("message",message);
-                JSONObject smallTraveller=data.getJSONObject(0);
-                JSONObject largeTraveller=data.getJSONObject(1);
-                map.put(ConstantValues.CAR_NAME,smallTraveller.getString("car_name"));
-                map.put(ConstantValues.CAR_TYPE,smallTraveller.getString("car_type"));
-                map.put(ConstantValues.TOTAL_FARE,smallTraveller.getString("total_fare"));
-                map.put(ConstantValues.TOTAL_Distance,smallTraveller.getString("distance"));
+                JSONObject jsonObject = new JSONObject(response);
+                JSONArray data = jsonObject.getJSONArray("response");
+                message = jsonObject.getString("message");
+                flag = jsonObject.getString("flag");
+                map.put("flag", flag);
+                map.put("message", message);
+                JSONObject smallTraveller = data.getJSONObject(0);
+                JSONObject largeTraveller = data.getJSONObject(1);
+                map.put(ConstantValues.CAR_NAME, smallTraveller.getString("car_name"));
+                map.put(ConstantValues.CAR_TYPE, smallTraveller.getString("car_type"));
+                map.put(ConstantValues.TOTAL_FARE, smallTraveller.getString("total_fare"));
+                map.put(ConstantValues.TOTAL_Distance, smallTraveller.getString("distance"));
 
-                map.put(ConstantValues.LARGE_CAR_NAME,largeTraveller.getString("car_name"));
-                map.put(ConstantValues.LARGE_CAR_TYPE,largeTraveller.getString("car_type"));
-                map.put(ConstantValues.LARGE_TOTAL_FARE,largeTraveller.getString("total_fare"));
-                map.put(ConstantValues.LARGE_TOTAL_Distance,largeTraveller.getString("distance"));
+                map.put(ConstantValues.LARGE_CAR_NAME, largeTraveller.getString("car_name"));
+                map.put(ConstantValues.LARGE_CAR_TYPE, largeTraveller.getString("car_type"));
+                map.put(ConstantValues.LARGE_TOTAL_FARE, largeTraveller.getString("total_fare"));
+                map.put(ConstantValues.LARGE_TOTAL_Distance, largeTraveller.getString("distance"));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -1128,42 +1123,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         @Override
         protected void onPostExecute(HashMap<String, String> hashMap) {
             circularProgressBar.setVisibility(View.GONE);
-       //     String flag=hashMap.get("flag");
-         //   String message=hashMap.get("message");
+            //     String flag=hashMap.get("flag");
+            //   String message=hashMap.get("message");
             setDataToViews(hashMap);
         }
     }
 
     private void setDataToViews(HashMap<String, String> hashMap) {
-     //   smallPickupCost=hashMap.get(ConstantValues.TOTAL_FARE);
-       // largePickupCost=hashMap.get(ConstantValues.LARGE_TOTAL_FARE);
+        //   smallPickupCost=hashMap.get(ConstantValues.TOTAL_FARE);
+        // largePickupCost=hashMap.get(ConstantValues.LARGE_TOTAL_FARE);
 
-        smallPickupDistance=hashMap.get(ConstantValues.TOTAL_Distance);
-        largePickupDistance=hashMap.get(ConstantValues.LARGE_TOTAL_Distance);
+        smallPickupDistance = hashMap.get(ConstantValues.TOTAL_Distance);
+        largePickupDistance = hashMap.get(ConstantValues.LARGE_TOTAL_Distance);
 
-        double value=0.0;
-        double values22=0.0;
-        double value2=0.0;
-        double  values=0.0;
+        double value = 0.0;
+        double values22 = 0.0;
+        double value2 = 0.0;
+        double values = 0.0;
 
         try {
             value = Double.parseDouble(hashMap.get(ConstantValues.TOTAL_FARE));
             values = Double.parseDouble(new DecimalFormat("#.##").format(value));
             //  Log.d("TAGS", String.valueOf(values));
-        }catch (Exception e){}
+        } catch (Exception e) {
+        }
 
         try {
 
             value2 = Double.parseDouble(hashMap.get(ConstantValues.LARGE_TOTAL_FARE));
             values22 = Double.parseDouble(new DecimalFormat("#.##").format(value2));
             // Log.d("TAGS", String.valueOf(values22));}
+        } catch (Exception e) {
         }
-        catch (Exception e){}
 
-        smallPickupCost=""+values;
-        largePickupCost=""+values22;
-        txtsmallCost.setText("Fare Cost: $"+values);
-        txtLargeCost.setText("Fare Cost: $"+values22);
+        smallPickupCost = "" + values;
+        largePickupCost = "" + values22;
+        txtsmallCost.setText("Fare Cost: $" + values);
+        txtLargeCost.setText("Fare Cost: $" + values22);
 
     }
 

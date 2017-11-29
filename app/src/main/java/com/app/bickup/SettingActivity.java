@@ -28,6 +28,15 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         imgBack=(ImageView)findViewById(R.id.backImage_header);
         imgBack.setVisibility(View.VISIBLE);
         imgBack.setOnClickListener(this);
+
+        findViewById(R.id.edit_profile).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent s=new Intent(SettingActivity.this,EditProfileActivity.class);
+                startActivity(s);
+            }
+        });
+
     }
 
     @Override
