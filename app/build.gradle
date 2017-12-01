@@ -15,7 +15,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.app.bickup"
+        applicationId "com.app.bickup_user"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
@@ -78,12 +78,18 @@ dependencies {
     compile 'at.blogc:expandabletextview:1.0.5'
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    // this line must be included to integrate with Firebase
+
+
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
 repositories {
     mavenCentral()
 }
 /*repositories {
     maven { url "https://jitpack.io" }
 }*/
+
+apply plugin: 'com.google.gms.google-services'

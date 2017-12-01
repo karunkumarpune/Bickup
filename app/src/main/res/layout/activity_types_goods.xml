@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:id="@+id/coordinator_type_goods"
     android:background="@color/white"
-    tools:context="com.app.bickup.TypesGoods">
+    tools:context="com.app.bickup_user.TypesGoods">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

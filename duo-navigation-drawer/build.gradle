@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+
 
 ext {
     bintrayRepo = 'maven'
@@ -28,7 +28,7 @@ ext {
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         minSdkVersion 15

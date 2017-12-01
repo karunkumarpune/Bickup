@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/coordinator_activity_goods"
     android:orientation="vertical"
-    tools:context="com.app.bickup.GoodsActivity">
+    tools:context="com.app.bickup_user.GoodsActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

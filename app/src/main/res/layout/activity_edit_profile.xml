@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.app.bickup.fragments.LoginFragment">
+    tools:context="com.app.bickup_user.fragments.LoginFragment">
     <include layout="@layout/toolbar_layout"
         android:id="@+id/toobar_layout"/>
     <ScrollView

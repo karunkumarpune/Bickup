@@ -1,9 +1,9 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+
 
 android {
     compileSdkVersion 22
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '26.0.2'
 
     sourceSets {
         main {

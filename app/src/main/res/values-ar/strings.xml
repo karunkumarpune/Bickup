@@ -28,9 +28,7 @@
     <string name="tv_enter_mobile">الرجاء إدخال رقم الجوال المسجل</string>
     <string name="mobile_number">رقم الهاتف المحمول</string>
     <string name="txt_submit">عرض</string>
-    <string name="forgot_pasword">هل نسيت كلمة المرور</string>
-
-
+    <string name="txt_forgot_pasword">هل نسيت كلمة المرور</string>
 
 
 </resources>

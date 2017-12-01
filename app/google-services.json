@@ -1,33 +1,35 @@
 {
   "project_info": {
-    "project_number": "826937251419",
-    "project_id": "firebase-bickup"
+    "project_number": "870004656135",
+    "firebase_url": "https://bickup-user.firebaseio.com",
+    "project_id": "bickup-user",
+    "storage_bucket": "bickup-user.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:826937251419:android:63ad9401d562c454",
+        "mobilesdk_app_id": "1:870004656135:android:1d5c768bd5759eb8",
         "android_client_info": {
-          "package_name": "com.app.bickup"
+          "package_name": "com.app.bickup_user"
         }
       },
       "oauth_client": [
         {
-          "client_id": "826937251419-r3cit88us9hu9p9r59dd7u5rbbcivvf7.apps.googleusercontent.com",
+          "client_id": "870004656135-hkndhbrc1vlsui92u1birs4d2l8u7qji.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.app.bickup",
+            "package_name": "com.app.bickup_user",
             "certificate_hash": "b1731ce7367a6fab0743bae71ba30abd0ff75e8f"
           }
         },
         {
-          "client_id": "826937251419-b8276koahaqcqul9ikeoqicp9rv8of8e.apps.googleusercontent.com",
+          "client_id": "870004656135-9vvqngvqmurgpaavnl5143716l73ktpi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC-xQ2NJX_QoyLjZQJw8DWnJQwqnJvmTI4"
+          "current_key": "AIzaSyA2il0qwQhOn2pJ_NOUN2ZP09Qd86N1lyk"
         }
       ],
       "services": {
@@ -35,11 +37,16 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870004656135-9vvqngvqmurgpaavnl5143716l73ktpi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }

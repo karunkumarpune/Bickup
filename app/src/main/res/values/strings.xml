@@ -9,7 +9,7 @@
     <string name="title_activity_login">Sign in</string>
     <string name="facebook_app_id" translatable="false">365284557255871</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb2072705686282046</string>
-    <string name="google_maps_key" translatable="false">AIzaSyDHqi1gLv1VPm1WQLupEjBx2Y5IPBa4QTg</string>
+    <string name="google_maps_key" translatable="false">AIzaSyAerLv9-6pnJrkQFhsD1dNyl63839lvls4</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -149,6 +149,9 @@
     <string name="txt_me">Me</string>
 
     <string name="txt_vaidate_name">Please enter name</string>
+
+    <string name="txt_driver_201">Driver not found, Please try again..</string>
+    <string name="txt_types">Type of goods</string>
 
     <string name="txt_vaidate_building_name">Please enter building name</string>
     <string name="txt_vaidate_pickup_location">Please enter pickup location</string>

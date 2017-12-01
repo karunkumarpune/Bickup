@@ -6,7 +6,7 @@
     android:gravity="center_horizontal"
     android:id="@+id/cordinatorlayout"
     android:orientation="vertical"
-    tools:context="com.app.bickup.LoginActivity">
+    tools:context="com.app.bickup_user.LoginActivity">
 
 
     <RelativeLayout

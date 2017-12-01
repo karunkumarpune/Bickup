@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.bickup.fragments.GoodsDetailsFragments">
+    tools:context="com.app.bickup_user.fragments.GoodsDetailsFragments">
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -296,7 +296,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_marginTop="8dp"
-
                 android:layout_height="1dp"
                 android:background="@color/screen_background"></View>
 
